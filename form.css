@@ -1,10 +1,242 @@
-.login-container {
-    width: 320px;
-    padding: 30px 25px;
-    background: #fffff;
-    border-raduis: 20px;
-    box-shadow: 8px 8px 15px rgba(0,0,0,0.05),
-    -8px -8px 16px rgba(255,255,255 0.8);
-    text-align: center;
-    font-family: 'poppins', sans-serif;
+/* -------- Base -------- */
+* { box-sizing: border-box; }
+
+html, body { height: 100%; }
+
+body{
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start; /* like your screenshot (near top) */
+  padding: 50px 16px;
+
+  background: radial-gradient(circle at 15% 10%, #eef6ff 0%, #ffffff 45%, #f7f8ff 100%);
+  color: #0f172a;
+  font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans";
 }
+
+/* -------- Container -------- */
+.login-container{
+  width: min(1100px, 100%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* center everything */
+  justify-content: flex-start;
+}
+
+/* -------- Top hero -------- */
+.hero{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  margin-bottom: 26px;
+}
+
+.icon{
+  margin-bottom: 10px;
+  font-weight: 800;
+}
+
+.hero h2{
+  margin: 0 0 14px;
+  font-size: clamp(28px, 3.8vw, 44px);
+  font-weight: 900;
+  letter-spacing: 0.2px;
+
+  /* nice similar “bold” look */
+  text-shadow: 0 3px 0 rgba(0,0,0,0.06);
+}
+
+/* Animated CTA button (the “click me to register”) */
+.cta{
+  border: 2px solid #1d4ed8;
+  background: #ffffff;
+  color: #1d4ed8;
+  font-weight: 800;
+  padding: 9px 14px;
+  border-radius: 10px;
+  cursor: pointer;
+
+  animation: ctaFloat 1.8s ease-in-out infinite, ctaGlow 2.2s ease-in-out infinite;
+  transition: transform .18s ease, box-shadow .18s ease, background .18s ease;
+}
+
+.cta:hover{
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 35px rgba(29, 78, 216, 0.18);
+  background: rgba(29, 78, 216, 0.06);
+}
+
+@keyframes ctaFloat{
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+@keyframes ctaGlow{
+  0%,100% { box-shadow: 0 0 0 rgba(29,78,216,0); }
+  50% { box-shadow: 0 0 0 7px rgba(29,78,216,0.12); }
+}
+
+/* -------- Popover -------- */
+.popover{
+  border: 3px solid #0b0b0b;
+  background: rgba(255,255,255,0.92);
+  padding: 18px 14px;
+  border-radius: 4px;
+
+  width: 320px;
+  max-width: 92vw;
+
+  /* center content inside */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+  /* subtle open animation */
+  animation: popIn .25s ease-out both;
+}
+
+@keyframes popIn{
+  from { opacity: 0; transform: translateY(8px) scale(0.98); }
+  to   { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+.form{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;   /* center all fields */
+  justify-content: center;
+  text-align: center;    /* “justify/center” look */
+  gap: 12px;
+}
+
+/* -------- Fields -------- */
+.field{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;  /* center label+input */
+  justify-content: center;
+  text-align: center;
+}
+
+.field label{
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 6px;
+}
+
+/* Inputs */
+.field input[type="text"],
+.field input[type="email"],
+.field input[type="password"]{
+  width: 92%;
+  padding: 9px 10px;
+  border-radius: 8px;
+  border: 1.5px solid #94a3b8;
+  outline: none;
+  background: #fff;
+
+  transition: box-shadow .18s ease, border-color .18s ease, transform .18s ease;
+}
+
+.field input:focus{
+  border-color: #1d4ed8;
+  box-shadow: 0 0 0 5px rgba(29,78,216,0.15);
+}
+
+.gender-title{
+  font-size: 18px;
+  font-weight: 800;
+  margin-bottom: 8px;
+}
+
+/* Gender radio layout */
+.gender{
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+}
+
+.opt{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  text-align: center;
+}
+
+.gender input[type="radio"]{
+  width: 16px;
+  height: 16px;
+}
+
+/* -------- Buttons (animated) -------- */
+.btn-row{
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center; /* center buttons */
+  gap: 10px;
+  margin-top: 6px;
+}
+
+.btn{
+  position: relative;
+  border-radius: 10px;
+  padding: 9px 16px;
+  font-weight: 900;
+  cursor: pointer;
+  border: 2px solid transparent;
+  outline: none;
+
+  transition: transform .18s ease, box-shadow .18s ease, filter .18s ease;
+  animation: btnFloat .9s ease-in-out infinite, btnSheen 2.2s ease-in-out infinite;
+}
+
+/* Primary = gradient */
+.btn.primary{
+  color: #fff;
+  background: linear-gradient(110deg, #0ea5e9 0%, #1d4ed8 45%, #0ea5e9 100%);
+  background-size: 250% 250%;
+  border-color: rgba(29,78,216,0.35);
+}
+
+/* Secondary = white + dark */
+.btn.secondary{
+  color: #0f172a;
+  background: #fff;
+  border-color: #0f172a;
+  animation: btnFloat .9s ease-in-out infinite, btnSheenSecondary 2.0s ease-in-out infinite;
+}
+
+/* Hover effects */
+.btn:hover{
+  transform: translateY(-2px) scale(1.03);
+  box-shadow: 0 14px 35px rgba(2, 6, 23, 0.18);
+  filter: saturate(1.1);
+}
+
+@keyframes btnFloat{
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-3px); }
+}
+
+@keyframes btnSheen{
+  0%   { background-position: 0% 50%; }
+  100% { background-position: 100% 50%; }
+}
+
+@keyframes btnSheenSecondary{
+  0%   { box-shadow: inset 0 0 0 0 rgba(29,78,216,0.0); }
+  50%  { box-shadow: inset 0 0 0 120px rgba(29,78,216,0.08); }
+  100% { box-shadow: inset 0 0 0 0 rgba(29,78,216,0.0); }
+}
+

@@ -7,41 +7,66 @@
         <link rel="stylesheet" href="form.css">
     </head>
     <body>
-        <div class="login-container">
-            <div class="icon">...</div>
-        <h2>Register Here!</h2>
-        <button popovertarget="popover"> click me to register</button>
-        <div popover id ="popover">
-        <div>
-            <label for="Fullname">Fullname:</label><br>
-            <input type="text" id="Fullname" name="fullname" required>
-        </div>
-        <div>
-            <label for="Address">Address:</label><br>
-            <input type="text" id="Address" name="Address"  required>
-        </div>
-        <div>
-            <label for="Email">Email</label>:</label><br>
-            <input type="text" id="Email" name="Email"  required>
-        </div>
-        <div>
-            <label for="Password">Password:</label><br>
-            <input type="text" id="Password" name="Password"  required>
-        </div>
-        <div>
-            <label>Gender</label><br>
-            <input type="radio" id="Male" name="Gender" value="Male">
-            <label for="Male">Male</label><br>
-            
-            <input type="radio" id="Female" name="Gender" value="Female">
-            <label for="female">Female</label><br>
+  <div class="login-container">
+    <div class="icon">...</div>
 
-            <input type="radio" id="other" name="Gender" value="Other">
-            <label for="Other">Other</label><br>
+    <div class="hero">
+      <h2>Register Here!</h2>
+    </div>
+    <button popovertarget="popover">click me to register</button>
+
+    <div popover id="popover" id="popover">
+      <form class="form" action="#" method="post">
+        <div class="field">
+          <label for="Fullname">Fullname:</label>
+          <input type="text" id="Fullname" name="fullname" required>
         </div>
-        <button type="submit" value="Submit"> Submit </button> 
-        <button type="Clear" value="Clear">Clear</button>
+
+        <div class="field">
+          <label for="Address">Address:</label>
+          <input type="text" id="Address" name="Address" required>
         </div>
+
+        <div class="field">
+          <label for="Email">Email:</label>
+          <input type="email" id="Email" name="Email" required>
+        </div>
+
+        <div class="field">
+          <label for="Password">Password:</label>
+          <input type="password" id="Password" name="Password" required>
+        </div>
+
+        <div class="field">
+          <div class="gender-title">Gender</div>
+
+          <div class="gender">
+            <div class="opt">
+              <input type="radio" id="Male" name="Gender" value="Male">
+              <label for="Male">Male</label>
+            </div>
+
+            <div class="opt">
+              <input type="radio" id="Female" name="Gender" value="Female">
+              <label for="Female">Female</label>
+            </div>
+
+            <div class="opt">
+              <input type="radio" id="other" name="Gender" value="Other">
+              <label for="other">Other</label>
+            </div>
+          </div>
+        </div>
+
+        <div class="btn-row">
+          <button class="btn primary" type="submit">Submit</button>
+          <button class="btn secondary" type="reset">Clear</button>
+        </div>
+      </form>
+    </div>
+  </div>
+</body>
+
 
     </body>
 </html>
