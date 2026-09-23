@@ -1,32 +1,27 @@
-body {
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+}
+body{
     font-family: Arial, Helvetica, sans-serif;
-    background-color: aquamarine;
-    display: flex;
-    border: rgb(164, 222, 76);
-    padding: solid gray;
-    align-items: center;
-    justify-content: center;
-    height: 50px;
-    width: 30px;
-    margin: 10;
+    text-align: center;
+    background-color: gray solid;
+    padding: 30px;
 }
 .hero{
-    background-color: bisque;
-    padding: 28px;
-    border-radius: 20px;
-    text-align: center;
-    justify-content: center;
-    align-items: center;
-    width: 20px;
-    height: 12px;
+     background-color: yellowgreen solid;
+     color: rgba(51, 0, 255, 0.436);
+     padding: 20px;
+     border-radius: 15px;
+     text-align: center;
 }
 .hero h2{
-  margin: 0 0 14px;
-  font-size: clamp(28px, 3.8vw, 44px);
-  font-weight: 900;
-  letter-spacing: 0.2px;
-  font-display: green solid;
-
-  /* nice similar “bold” look */
-  text-shadow: 0 3px 0 rgba(0,0,0,0.06);
+    font-size: 30px;
+    padding: 12px;
+    height: 30px;
+    font-weight: 20; 
+    justify-content: center;
+    letter-spacing: 0.25;
+    text-shadow: 20px;
 }
