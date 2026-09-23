@@ -23,5 +23,12 @@ body{
     font-weight: 20; 
     justify-content: center;
     letter-spacing: 0.25;
-    text-shadow: 20px;
+    text-decoration: solid;
+}
+button[popovertarget="popover"]{
+    font-size: 12px;
+    font-family: Arial, sans-serif;
+    margin: 10px;
+    border-radius: 12px;
+    padding: 10px;
 }
