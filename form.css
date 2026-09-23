@@ -15,14 +15,6 @@ body{
   font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, "Noto Sans";
 }
 
-/* -------- Container -------- */
-.login-container{
-  width: min(1100px, 100%);
-  display: flex;
-  flex-direction: column;
-  align-items: center;  /* center everything */
-  justify-content: flex-start;
-}
 
 /* -------- Top hero -------- */
 .hero{
@@ -31,8 +23,9 @@ body{
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
+  text-align: right;
   margin-bottom: 26px;
+  
 }
 
 .icon{
@@ -45,13 +38,14 @@ body{
   font-size: clamp(28px, 3.8vw, 44px);
   font-weight: 900;
   letter-spacing: 0.2px;
+  font-display: red solid;
 
   /* nice similar “bold” look */
   text-shadow: 0 3px 0 rgba(0,0,0,0.06);
 }
 
 /* Animated CTA button (the “click me to register”) */
-.cta{
+cta{
   border: 2px solid #1d4ed8;
   background: #ffffff;
   color: #1d4ed8;
@@ -80,8 +74,8 @@ body{
 }
 
 /* -------- Popover -------- */
-.popover{
-  border: 3px solid #0b0b0b;
+popover{
+  border: 3px solid #e77474;
   background: rgba(255,255,255,0.92);
   padding: 18px 14px;
   border-radius: 4px;
